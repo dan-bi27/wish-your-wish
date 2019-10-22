@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>wish your wish</title>
+	<link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		body{width: 100vw; height: 100vh; background-color: black; margin: 0px;}
+		.cir{width:1px; height:1px; background:white;border-radius: 50%; position: absolute; box-shadow: 1px 1px 2px white, 0 0 25px white, 0 0 5px white;}
+
+		.rain{width:3px; height: 50px;
+				opacity: 0;
+				background:white;
+				position: absolute;
+				transform:rotate(45deg);
+animation: rr 0.8s forwards ease-in;}
+		@keyframes rr{
+			from{bottom: 1000px; left:1000px; opacity: 1;}
+			to{bottom:0px; left: 0; opacity: 0;}
+		}
+
+		.wish{ color: white; font-size: 3em;  text-shadow: 1px 1px 2px white, 0 0 25px white, 0 0 3px gray; position: absolute; bottom: 0px; right: 50px; font-family: 'Liu Jian Mao Cao', cursive;}
+	</style>
+</head>
+<body>
+	<div id="circle" class="cir"></div>
+	<div class="rain" id="rrr"></div>
+	<p class="wish"> Wish your wish </p>
+
+
+	<script type="text/javascript">
+
+		for(var i=0; i<100; i++){
+		var a = circle.cloneNode(true);
+		a.id = i;
+		a.style.left = Math.random()*100 + "vw";
+		a.style.top = Math.random()*100 + "vh";
+		var dd = Math.random()*5 + "px";
+		a.style.width = dd;
+		a.style.height = dd;
+		a.style.background = rgbmake();	
+		document.body.appendChild(a);
+	}
+	function rgbmake(){
+		var a = randomBH(255,255);
+		var b = randomBH(255,255);
+		var c = randomBH(255,255);
+		var d ="rgb("+a+","+b+","+c+")";
+		return d;
+	}
+	
+	setInterval(aa,1000);
+	
+	function aa(){
+		location.reload();
+	}
+	
+
+
+function randomBH(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+for(var i=0; i<100; i++){
+		var tt = rrr.cloneNode(true);
+		tt.id = i;
+		
+		tt.style.animationDelay = i*1 + "s";
+		tt.style.left = i*1000 + "px";
+		tt.style.animationDuration = "1.5s";
+		tt.style.height = Math.random()*300 + "px";
+		tt.style.width = 2 + "px";
+		tt.style.background = rgbmake();
+		document.body.appendChild(tt);
+	}
+
+
+	//rgb(32,45,64)
+	
+	function rgbmake(){
+		var a = randomBH(255,255);
+		var b = randomBH(255,255);
+		var c = randomBH(255,255);
+		var d ="rgb("+a+","+b+","+c+")";
+		return d;
+	}
+
+	function randomBH(min, max) {
+	  min = Math.ceil(min);
+	  max = Math.floor(max);
+	  return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	</script>
+</body>
+</html>
